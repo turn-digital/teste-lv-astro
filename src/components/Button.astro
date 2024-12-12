@@ -1,0 +1,21 @@
+---
+interface Props {
+	title: string;
+	classList?: string;
+    action: Function;
+}
+
+const { title, classList, action } = Astro.props;
+---
+
+<button class={`button ${classList ? classList : ''}`}
+    onclick=action>
+    {title}
+</button>
+
+<style lang="scss">
+    .button {
+        background-color: transparent;
+        border: none;
+    }
+</style>

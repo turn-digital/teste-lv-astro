@@ -1,0 +1,17 @@
+---
+import Button from './Button.astro';
+---
+
+<div class="hero">
+    <div class="wrap">
+        <div class="hero__content">
+            <h2 class="hero__title">Jaunā E‑veselības iedzīvotāju portāla <strong>prototips</strong></h2>
+            <Button classList="button--purple" title="Skatīt prototipu" action={()=>{console.log('test')}}/>
+            <div class="hero__desc">
+                <p>Projekts paredz jaunās paaudzes iedzīvotāju E-veselības portāla prototipa izveidi. Prototips – portāla vīzijas modelis.</p>
+                <p>Prototips tiks izmantots jauna <a href="http://www.eveseliba.gov.lv" title="Iet uz eveseliba.gov.lv portālu" target="_blank" rel="noopener noreferrer">www.eveseliba.gov.lv</a> portāla izveidē, lai tas būtu mūsdienīgs, ērts lietošanā, piedāvātu jaunus pakalpojumus un atbilstu iedzīvotāju vajadzībām.</p>
+                <p>Pirms sāc testēt prototipu un klikšķināt tā sadaļas, uzzini, kas jāņem vērā.</p>
+            </div>
+        </div>
+    </div>
+</div>

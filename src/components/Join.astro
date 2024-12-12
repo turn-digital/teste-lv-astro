@@ -1,0 +1,27 @@
+---
+import Banner from "./Banner.astro";
+import Button from "./Button.astro";
+
+---
+<div class="join">
+    <div class="wrap">
+        <div class="join__content">
+            <div class="join__col">
+                <h3 class="join__title title">Kā iesaistīties?</h3>
+                <div class="join__item">
+                    <h4 class="join__subtitle">Izpēti sadaļas un funkcijas!</h4>
+                    <p class="join__desc">Izvēlies vienu vai vairākus lietotāju profilus, pārlūko sadaļas, klikšķini uz funkcijām un pamēģini atrast konkrētu informāciju.</p>
+                </div>
+                <div class="join__item">
+                    <h4 class="join__subtitle">Dalies ar savu viedokli!</h4>
+                    <p class="join__desc">Uzraksti komentāru anketā zemāk, kas Tev šķita vērtīgs un ko varētu uzlabot.</p>
+                </div>
+                <Banner/>
+                <Button title="Atvērt prototipu" action={()=>console.log('test')}/>
+            </div>
+            <div class="join__col">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+</div>

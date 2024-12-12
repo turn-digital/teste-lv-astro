@@ -1,0 +1,29 @@
+---
+// import Welcome from '../components/Welcome.astro';
+import Description from '../components/Description.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import News from '../components/News.astro';
+import Join from '../components/Join.astro';
+import Participants from '../components/Participants.astro';
+import Solutions from '../components/Solutions.astro';
+import Steps from '../components/Steps.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<!-- <Welcome /> -->
+	<Header/>
+	<Hero/>
+	<News/>
+	<Steps/>
+	<Solutions/>
+	<Participants/>
+	<Description title="Kas ir prototips?" desc="<p>Prototips ir portāla vīzijas modelis - melnraksts. Tas parāda un ļauj notestēt portāla kopējo struktūru, funkcionalitāti un dizaina idejas vēl pirms tiek uzsākta pilnvērtīga izstrāde. Prototips nodrošina iespēju efektīvi plānot un uzlabot risinājumu, samazinot kļūdu un izmaiņu nepieciešamību turpmākajos posmos.</p>"/>
+	<Join/>
+
+	<Description title="Mediju pārstāvjiem" desc=`<p><a href="#" title="Iet uz kontaktu mediju saiti" target="_blank" rel="noopener noreferrer">Kontaktu medijiem</a></p><p><a href="#" title="Iet uz preses relīzēm" target="_blank" rel="noopener noreferrer">Preses relīzes</a></p><p><a href="#" title="Atvērt prototipu ekrānšāviņus" target="_blank" rel="noopener noreferrer">Prototipu ekrānšāviņi</a></p>`/>
+</Layout>
