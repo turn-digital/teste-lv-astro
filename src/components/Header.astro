@@ -3,20 +3,27 @@ import logo from '../assets/logo.png';
 ---
 <header class="header">
     <div class="wrap">
-        <nav itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main Navigation">
-            <a href="/" itemscope itemtype="https://schema.org/Organization" itemprop="url" aria-label="Go to Home">
-              <img src={logo.src} width="30px" height="32px" alt="E-veselības logotips" itemprop="logo"/>
-            </a>
-            <ul>
-              <li>
-                <a href="#prototips" itemprop="name">Skatīt prototipu</a>
-              </li>
-            </ul>
-          </nav>
+      <nav class="header__nav" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main Navigation">
+        <a href="/" itemscope itemtype="https://schema.org/Organization" itemprop="url" aria-label="Go to Home">
+          <img src={logo.src} width="30px" height="32px" alt="E-veselības logotips" itemprop="logo"/>
+        </a>
+        <ul class="header__menu">
+          <li>
+            <a class="link" href="#prototips" itemprop="name">Skatīt prototipu</a>
+          </li>
+        </ul>
+      </nav>
     </div>
 </header>
 
 <style lang="scss">
     .header {
+      border-bottom: 1px solid var(--silver);
+
+      &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
 </style>

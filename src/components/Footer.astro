@@ -1,26 +1,46 @@
 ---
+import logo from '../assets/logo.png';
 ---
 <footer class="footer">
     <div class="wrap">
         <div class="footer__content">
             <div class="footer__col">
-                <img src="" alt="">
-                <address>
-                    Nacionālais veselības dienests<br>
-                    Cēsu iela 31 k-3, 6. ieeja, Rīga, LV-1012
-                  </address>
+              <img src={logo.src} width="30px" height="32px" alt="E-veselības logotips" itemprop="logo"/>
+              <address>
+                Nacionālais veselības dienests<br>
+                Cēsu iela 31 k-3, 6. ieeja, Rīga, LV-1012
+              </address>
             </div>
             <div class="footer__col">
                 <div itemscope itemtype="https://schema.org/Organization">
-                    <p itemprop="name">E-veselības atbalsta dienests/p>
+                    <p itemprop="name">E-veselības atbalsta dienests</p>
                     <p>
                       <a href="tel:+37122812313" itemprop="telephone" aria-label="Call E-veselības atbalsta dienests at +371 2281 2313">
                         +371 2281 2313
                       </a>
                     </p>
-                    <a class="footer__link" href="$" title="Iet uz piekļūstamības paziņojuma portālu" target="_blank" rel="noopener noreferrer">Pieklūstamības paziņojums</a>
+                    <a class="footer__link link link--underline" href="$" title="Iet uz piekļūstamības paziņojuma portālu" target="_blank" rel="noopener noreferrer">Pieklūstamības paziņojums</a>
                   </div>
             </div>
         </div>
     </div>
 </footer>
+
+<style lang="scss">
+  .footer {
+    padding: 24px 0 56px;
+    background-color: var(--background-dark);
+    color: var(--text-secondary);
+
+    address {
+      margin-top: 40px;
+      padding: 24px 40px 24px 24px;
+      background-color: var(--layer-01-dark);
+      border: 1px solid var(--border-subtle-01-dark);
+      font-style: normal;
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+</style>
