@@ -1,4 +1,7 @@
 ---
+import iconA11y from '../assets/icon-a11y.svg';
+import iconMobile from '../assets/icon-mobile.svg';
+import iconPerson from '../assets/icon-favorite.svg';
 ---
 <div class="solutions">
     <div class="wrap">
@@ -9,21 +12,63 @@
             </div>
             <div class="solutions__list">
                 <div class="solutions__item">
-                    <img src="" alt="">
-                    <h4>Piekļūstamība</h4>
-                    <p>Ievēroti WCAG (Web Content Accessibility Guidelines) standarti, lai portāls būtu pieejams visiem.</p>
+                    <img src={iconA11y.src} alt="Cilvēka simbols aplī" width="32" height="32">
+                    <div class="solutions__item-content">
+                        <h4>Piekļūstamība</h4>
+                        <p>Ievēroti WCAG (Web Content Accessibility Guidelines) standarti, lai portāls būtu pieejams visiem.</p>
+                    </div>
                 </div>
                 <div class="solutions__item">
-                    <img src="" alt="">
-                    <h4>“Mobilie vispirms” pieeja</h4>
-                    <p>Dizains un funkcionalitāte ir optimizēti mobilajām ierīcēm, nodrošinot ērtu lietošanas pieredzi dažādos ekrānos.</p>
+                    <img src={iconMobile.src} alt="Mobīlais ekrāns ar ķeksīti" width="32" height="32">
+                    <div class="solutions__item-content">
+                        <h4>“Mobilie vispirms” pieeja</h4>
+                        <p>Dizains un funkcionalitāte ir optimizēti mobilajām ierīcēm, nodrošinot ērtu lietošanas pieredzi dažādos ekrānos.</p>
+                    </div>
                 </div>
                 <div class="solutions__item">
-                    <img src="" alt="">
-                    <h4>Lietotājcentrēta pieeja</h4>
-                    <p>Fokuss uz lietotāju vajadzībām visā izstrādes procesā. Veiktas lietotāju intervijas, kartiņu šķirošana, navigācijas koka tests, prototipa testēšana u.c.</p>
+                    <img src={iconPerson.src} alt="Cilvēka simbols ar sirdi" width="32" height="32">
+                    <div class="solutions__item-content">
+                        <h4>Lietotājcentrēta pieeja</h4>
+                        <p>Fokuss uz lietotāju vajadzībām visā izstrādes procesā. Veiktas lietotāju intervijas, kartiņu šķirošana, navigācijas koka tests, prototipa testēšana u.c.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<style lang="scss">
+    .solutions {
+        padding: 96px 0 0;
+        background-color: var(--background-light);
+
+        &__item {
+            margin-top: 24px;
+            display: flex;
+
+            & + .solutions__item {
+                margin-top: 32px;
+            }
+        }
+
+        &__item-content {
+            margin-left: 16px;
+            flex: 1;
+        }
+
+        @media (min-width: 1024px) {
+            &__list {
+                padding-top: 24px;
+                display: flex;
+                gap: 16px;
+            }
+            &__item {
+                margin-top: 0;
+
+                & + .solutions__item {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+</style>

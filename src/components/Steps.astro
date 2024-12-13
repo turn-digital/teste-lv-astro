@@ -3,7 +3,7 @@
 <div class="steps">
     <div class="wrap">
         <div class="steps__content">
-            <h3 class="steps_title title">Kas jauns paredzēts E‑veselības portālā?</h3>
+            <h3 class="steps_title title">Nākamie soļi 5 gadu laikā</h3>
             <ul class="steps__list">
                 <li>E‑nosūtījuma obligāta izmantošana</li>
                 <li>Lietotāju iesaiste un testēšana arī turpmākā izstrādes procesā</li>
@@ -14,3 +14,28 @@
         </div>
     </div>
 </div>
+
+<style lang="scss">
+    .steps {
+        margin-top: -16px;
+        background-color: var(--background-light);
+
+        &__list { 
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            align-self: stretch;
+        }
+        li {
+            padding: 24px 40px 24px 24px;
+            width: 100%;
+            border: 1px solid var(--border-subtle-01-light);
+            background: var(--layer-01-light);
+        }
+
+        @media (min-width: 720px) {
+            padding-top: 132px;
+        }
+    }
+</style>

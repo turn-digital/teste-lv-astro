@@ -4,8 +4,8 @@ import logo from '../assets/logo.png';
 <header class="header">
     <div class="wrap">
       <nav class="header__nav" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main Navigation">
-        <a href="/" itemscope itemtype="https://schema.org/Organization" itemprop="url" aria-label="Go to Home">
-          <img src={logo.src} width="30px" height="32px" alt="E-veselības logotips" itemprop="logo"/>
+        <a class="header__logo" href="/" itemscope itemtype="https://schema.org/Organization" itemprop="url" aria-label="Go to Home">
+          <img src={logo.src} width="32px" height="32px" alt="E-veselības logotips" itemprop="logo"/>
         </a>
         <ul class="header__menu">
           <li>
@@ -18,12 +18,30 @@ import logo from '../assets/logo.png';
 
 <style lang="scss">
     .header {
-      border-bottom: 1px solid var(--silver);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-subtle-01-light);
+
+      // &__logo { // if logo will be squered then will be ok
+      //   transform: rotate(0);
+      //   transform-origin: center;
+      //   transition: all 0.3s ease-in;
+
+      //   &:hover {
+      //     transform: rotate(360deg);
+      //   }
+      // }
 
       &__nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        a {
+          &:hover, &:focus-visible {
+            color: var(--button-secondary-hover);
+            text-decoration: underline;
+          }
+        }
       }
     }
 </style>

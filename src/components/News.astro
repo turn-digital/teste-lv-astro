@@ -1,4 +1,5 @@
 ---
+import mobileImage from '../assets/news-mobile.png';
 ---
 <div class="news">
     <div class="wrap">
@@ -9,7 +10,6 @@
                 <p>Jaunajā portālā būs pieejams arī Veselības plāns, kas līdzīgi kā kalendārs ietvers informāciju par visām konkrētā lietotāja aktualitātēm.</p>
                 <p>Tiks ieviests arī:</p>
                 <ul>
-                    <li>E-nosūtījums</li>
                     <li>E-pieraksts</li>
                     <li>Paziņojumi</li>
                     <li>Atgādinājumi e-pastā</li>
@@ -17,5 +17,53 @@
                 <p>Kā arī jaunais portāls būs ērti izmantojams viedierīcēs.</p>
             </div>
         </div>
+        <div class="news__image">
+            <img src={mobileImage.src} alt="Mobīlais telefons ar ekrānšāviņu.">
+        </div>
     </div>
 </div>
+
+<style lang="scss">
+    .news {
+        padding: 72px 0 0;
+        background-color: var(--background-light);
+        border-top: 1px solid var(--border-subtle-01-light);
+
+        .wrap {
+            position: relative;
+        }
+
+        &__image {
+            margin-top: 40px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &__content {
+            max-width: 540px;
+        }
+
+        @media (min-width: 720px) {
+            &__content {
+                width: 65%;
+            }
+            &__image {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 35%;
+                transform: translateY(-50%);
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        @media (min-width: 1024px) {
+            &__image {
+                width: 500px;
+            }
+		}
+    }
+</style>

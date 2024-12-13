@@ -2,15 +2,24 @@
 interface Props {
 	title: string;
 	desc: string;
+    classList?: string
 }
 
-const { title, desc } = Astro.props;
+const { title, desc, classList } = Astro.props;
 ---
-<div class="description">
+<div class={`description ${classList ?? ''}`}>
     <div class="wrap">
         <h3 class="solutions__title title">{title}</h3>
-        <div class="description__desc text">
-            {desc}
-        </div>
+        <div class="description__desc text" set:html={desc}></div>
     </div>
 </div>
+<style lang="scss">
+    .description {
+        padding: 72px 0 0;
+        background-color: var(--background-light);
+
+        &__last {
+            padding-bottom: 56px;
+        }
+    }
+</style>

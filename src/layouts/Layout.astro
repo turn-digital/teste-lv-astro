@@ -20,32 +20,87 @@
 		--border-subtle-01-light: #E5E0DF;
 		--layer-01-light: #FFFFFF;
 		--btn-secondary: #413143;
+		--text-primary: #171414;
+		--text-on-color: #FFFFFF;
 
 		--background-dark: #171414;
 		--border-subtle-01-dark: #393939;
 		--layer-01-dark: #272525;
 		--text-secondary: #C6C6C6;
+
+		--button-primary: #A224B2;
+		--button-secondary-hover: #6A2B72;
 	}
+
+	@font-face {
+		font-family: 'Roboto';
+		src: url('../assets/Fonts/Roboto-Regular.woff');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+  	}
+
+	@font-face {
+		font-family: 'Roboto';
+		src: url('../assets/Fonts/Roboto-Regular.woff');
+		font-weight: 500;
+		font-style: normal;
+		font-display: swap;
+  	}
+
+	@font-face {
+		font-family: 'Roboto';
+		src: url('../assets/Fonts/Roboto-Bold.woff');
+		font-weight: 700;
+		font-style: bold;
+		font-display: swap;
+  	}
+
+	  @font-face {
+		font-family: 'Roboto';
+		src: url('../assets/Fonts/Roboto-Light.woff');
+		font-weight: 300;
+		font-style: normal;
+		font-display: swap;
+  	}
+
+	*,
+	*::before,
+	*::after {
+	box-sizing: border-box;
+	}
+	
 	/* reset */
-	p {
-		padding: 0;
+	h1,h2,h3,h4,h5,h6 {
+		margin: 0;
 	}
-	ul {
-		list-style-type: none;
+	p {
+		margin: 0;
+		padding: 0;
 	}
 	a {
 		text-decoration: none;
+		transition: all 0.1s ease-in;
 	}
-
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
 	html,
 	body {
 		padding: 0;
 		margin: 0;
+		font-family: 'Roboto', 'Helvetica', sans-serif;
 		color: var(--text-primary);
 		font-size: 16px;
 		font-style: normal;
 		font-weight: 400;
 		line-height: 24px; 
+	}
+
+	img {
+		display: inline-block;
 	}
 
 	.wrap {
@@ -71,7 +126,69 @@
 		}
 	}
 
-	.text {
+	.title {
+		margin-bottom: 24px;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
 
+	.text {
+		p {
+			font-family: Roboto;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 24px;
+
+			& + p {
+				margin-top: 24px;
+			}
+		}
+
+		ul {
+			& + ul,
+			& + p {
+				margin-top: 24px;
+			}
+		}
+
+		li {
+			position: relative;
+			padding-left: 16px;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 10px;
+				left: 0;
+				display: inline-block;
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				background-color: var(--text-primary);
+			}
+		}
+
+		a {
+			color: var(--primary);
+			text-decoration: underline;
+
+			&:hover, &:focus-visible{
+				color: var(--button-secondary-hover);
+			}
+
+			svg {
+				position: relative;
+				top: 4px;
+				margin-left: 2px;
+			}
+		}
+	}
+
+	h4 {
+		font-size: 18px;
+		font-weight: 700;
 	}
 </style>

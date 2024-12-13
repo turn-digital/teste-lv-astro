@@ -1,5 +1,6 @@
 ---
 import logo from '../assets/logo.png';
+import iconPhone from '../assets/icon-phone.svg';
 ---
 <footer class="footer">
     <div class="wrap">
@@ -12,15 +13,18 @@ import logo from '../assets/logo.png';
               </address>
             </div>
             <div class="footer__col">
+              <div class="footer__info">
                 <div itemscope itemtype="https://schema.org/Organization">
-                    <p itemprop="name">E-veselības atbalsta dienests</p>
-                    <p>
-                      <a href="tel:+37122812313" itemprop="telephone" aria-label="Call E-veselības atbalsta dienests at +371 2281 2313">
-                        +371 2281 2313
-                      </a>
-                    </p>
-                    <a class="footer__link link link--underline" href="$" title="Iet uz piekļūstamības paziņojuma portālu" target="_blank" rel="noopener noreferrer">Pieklūstamības paziņojums</a>
-                  </div>
+                  <p itemprop="name">E-veselības atbalsta dienests</p>
+                  <p class="footer__call">
+                    <a href="tel:+37122812313" itemprop="telephone" aria-label="Call E-veselības atbalsta dienests at +371 2281 2313">
+                      +371 2281 2313
+                    </a>
+                    <img src={iconPhone.src} alt="Telfona ikona"/>
+                  </p>
+                </div>
+              </div>
+              <a class="footer__link link link--underline" href="#" title="Iet uz piekļūstamības paziņojuma portālu" target="_blank" rel="noopener noreferrer">Pieklūstamības paziņojums</a>
             </div>
         </div>
     </div>
@@ -34,12 +38,56 @@ import logo from '../assets/logo.png';
 
     address {
       margin-top: 40px;
+      font-style: normal;
+    }
+
+    &__call {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__info {
+      margin-top: 40px;
       padding: 24px 40px 24px 24px;
       background-color: var(--layer-01-dark);
       border: 1px solid var(--border-subtle-01-dark);
       font-style: normal;
+      font-size: 18px;
+
       a {
+        color: var(--text-on-color);
         font-weight: bold;
+
+        &:hover, &:focus-visible {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__link {
+      margin-top: 40px;
+      display: inline-block;
+      text-decoration: underline;
+    }
+
+    @media (min-width: 1024px) {
+      padding-bottom: 96px;
+      
+      &__content {
+          display: flex;
+          gap: 16px;
+      }
+
+      &__col {
+          flex: 1;
+      }
+
+      &__info {
+        margin-top: 0;
+      }
+
+      &__link {
+        margin-top: 16px;
       }
     }
   }

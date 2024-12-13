@@ -1,13 +1,17 @@
 ---
+import arrowRight from '../assets/arrow--right.svg';
 ---
 <div class="participants">
     <div class="wrap">
         <div class="participants__content">
             <div class="participants__col">
-                <h3 class="solutions__title title">Tehniskie risinājumi, kas ņemti vērā</h3>
+                <h3 class="solutions__title title">Projekta dalībnieki</h3>
                 <div class="participants__desc text">
                     <p>Prototipa veidošanai tika uzrunāti vairāki dalībnieki no dažādām organizācijām, ārstniecības iestādēm u.c., lai nodrošinātu visu pušu vajadzību un interešu apzināšanu.</p>
-                    <a href="#" title="Uzrunāto dalībnieku saraksts" target="_blank" rel="noopener noreferrer">Uzrunāto dalībnieku saraksts</a>
+                    <a class="participants__link" href="#" title="Uzrunāto dalībnieku saraksts" target="_blank" rel="noopener noreferrer">
+                        Uzrunāto dalībnieku saraksts
+                        <img src={arrowRight.src} alt="Bulta norāda virzienu pa labi"/>
+                    </a>
                 </div>
             </div>
             <div class="participants__col">
@@ -16,3 +20,28 @@
         </div>
     </div>
 </div>
+
+<style lang="scss">
+    .participants {
+        padding: 96px 0 0;
+        background-color: var(--background-light);
+
+        &__link {
+            margin-top: 24px;
+            padding: 12px 4px;
+            display: inline-block;
+            text-decoration: underline;
+
+            &:hover {
+                color: var(--primary);
+                background-color: rgba(141, 141, 141, 0.50);
+            }
+
+            img {
+                position: relative;
+                top: 2px;
+                margin-left: 4px;
+            }
+        }
+    }
+</style>

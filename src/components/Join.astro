@@ -1,9 +1,10 @@
 ---
 import Banner from "./Banner.astro";
 import Button from "./Button.astro";
+import handImage from '../assets/hand.png';
 
 ---
-<div class="join">
+<div class="join" id="prototips">
     <div class="wrap">
         <div class="join__content">
             <div class="join__col">
@@ -17,11 +18,75 @@ import Button from "./Button.astro";
                     <p class="join__desc">Uzraksti komentāru anketā zemāk, kas Tev šķita vērtīgs un ko varētu uzlabot.</p>
                 </div>
                 <Banner/>
-                <Button title="Atvērt prototipu" action={()=>console.log('test')}/>
+                <Button label="Skatīt prototipu" title="Atvērt prototipu" classList="button--purple" link="#prototips" type="open"/>
             </div>
             <div class="join__col">
-                <img src="" alt="">
+                <img src={handImage.src} alt="Roka, kas tur telfonu">
             </div>
         </div>
     </div>
+    <div class="wrap">
+        <div class="join__comment">
+            <h4>Sniedz savas atziņas</h4>
+            <p>Kad esi apskatījis prototipu, padalies - kas tev personīgi  likās vērtīgs jaunajā E‑veselības portālā un kas, tavuprāt, būtu uzlabojams!</p>
+            <Button label="Rakstīt komentāru" link="/FIXthisurl" title="Rakstīt komentāru"/>
+        </div>
+    </div>
 </div>
+
+<style is-global lang="scss">
+    .join {
+        padding: 92px 0 24px;
+        background-color: var(--background-light);
+
+        &__item {
+            & + .join__item {
+                margin-top: 24px;
+            }
+        }
+
+        &__col {
+            &:nth-of-type(2) {
+                display: flex;
+                justify-content: flex-end;
+
+                img {
+                    max-width: 320px;
+                }
+            }
+        }
+
+        &__comment {
+            display: flex;
+            padding: 24px 40px 24px 24px;
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: stretch;
+            border: 1px solid var(--border-subtle-01-light);
+            background-color: var(--layer-01-light);
+
+            h4 {
+                margin-bottom: 16px;
+            }
+
+            p {
+                margin-bottom: 32px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            &__content {
+                display: flex;
+                gap: 16px;
+            }
+
+            &__col {
+                flex: 1;
+
+                &:nth-of-type(2) {
+                    margin-top: -122px;
+                }
+            }
+        }
+    }
+</style>

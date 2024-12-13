@@ -2,16 +2,23 @@
 interface Props {
 	title: string;
 	classList?: string;
-    action: Function;
+    link: string;
+    type?: string;
+    label: string;
 }
 
-const { title, classList, action } = Astro.props;
+const { title, classList, type, link, label } = Astro.props;
 ---
 
-<button class={`button ${classList ? classList : ''}`}
-    onclick=action>
+<a class={`button ${classList ? classList : ''}`}
+    target={link.startsWith('#') ? undefined : '_blank'}
+    rel={link.startsWith('#') ? undefined : 'noopener'}
+    role="button"
+    aria-label={label}
+    href={link}>
     {title}
-</button>
+    {type === "open" && <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 2V1h5v5h-1V2.707L9.707 7 9 6.293 13.293 2H10ZM2.293 13.707c.188.187.442.293.707.293h10a1.001 1.001 0 0 0 1-1V8h-1v5H3V3h5V2H3a1.001 1.001 0 0 0-1 1v10c0 .265.106.52.293.707Z" fill="#ffffff"/></svg>}
+</a>
 
 <style lang="scss">
     .button {
@@ -20,7 +27,6 @@ const { title, classList, action } = Astro.props;
         justify-content: center;
         align-items: center;
         background-color: var(--background-dark);
-        border: none;
         color: var(--text-secondary);
         font-size: 16px;
         font-style: normal;
@@ -36,6 +42,21 @@ const { title, classList, action } = Astro.props;
 
         &:focus-visible {
             box-shadow: inset 0 0 0 2px var(--background-dark), inset 0 0 0 4px var(--layer-01-light);
+        }
+
+        svg {
+            position: relative;
+            top: 2px;
+            margin-left: 16px;
+        }
+
+        &--purple {
+            background-color: var(--button-primary);
+            color: var(--text-on-color);
+
+            &:hover {
+                background-color: var(--button-secondary-hover);
+            }
         }
     }
 </style>
