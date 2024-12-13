@@ -2,4 +2,4 @@
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
-export default defineConfig({ site: "www.teste.lv" });
+export default defineConfig({ site: "https://www.teste.lv/" });
