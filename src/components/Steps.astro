@@ -1,19 +1,42 @@
 ---
 ---
-<div class="steps">
+<div class="steps" itemscope itemtype="https://schema.org/CreativeWork">
     <div class="wrap">
         <div class="steps__content">
-            <h3 class="steps_title title">Nākamie soļi 5 gadu laikā</h3>
-            <ul class="steps__list">
-                <li>E‑nosūtījuma obligāta izmantošana</li>
-                <li>Lietotāju iesaiste un testēšana arī turpmākā izstrādes procesā</li>
-                <li>E-pieraksta funkcionalitātes izstrāde</li>
-                <li>Veselības plāna izstrāde</li>
-                <li>Veselības bibliotēka, personalizētā medicīna, telemedicīna, zāļu bibliotēka u.c.</li>
+            <!-- Title -->
+            <h3 class="steps_title title" itemprop="name">Nākamie soļi 5 gadu laikā</h3>
+
+            <!-- Steps List -->
+            <ul class="steps__list" itemprop="text">
+                <!-- Step 1 -->
+                <li itemscope itemtype="https://schema.org/HowToStep">
+                    <span itemprop="name">E‑nosūtījuma obligāta izmantošana</span>
+                </li>
+                
+                <!-- Step 2 -->
+                <li itemscope itemtype="https://schema.org/HowToStep">
+                    <span itemprop="name">Lietotāju iesaiste un testēšana arī turpmākā izstrādes procesā</span>
+                </li>
+
+                <!-- Step 3 -->
+                <li itemscope itemtype="https://schema.org/HowToStep">
+                    <span itemprop="name">E-pieraksta funkcionalitātes izstrāde</span>
+                </li>
+
+                <!-- Step 4 -->
+                <li itemscope itemtype="https://schema.org/HowToStep">
+                    <span itemprop="name">Veselības plāna izstrāde</span>
+                </li>
+
+                <!-- Step 5 -->
+                <li itemscope itemtype="https://schema.org/HowToStep">
+                    <span itemprop="name">Veselības bibliotēka, personalizētā medicīna, telemedicīna, zāļu bibliotēka u.c.</span>
+                </li>
             </ul>
         </div>
     </div>
 </div>
+
 
 <style lang="scss">
     .steps {

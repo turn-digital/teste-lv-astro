@@ -1,5 +1,7 @@
 ---
 import arrowRight from '../assets/arrow--right.svg';
+import profileImage from '../assets/janis.png';
+import quotes from '../assets/quotes.svg';
 ---
 <div class="participants">
     <div class="wrap">
@@ -15,7 +17,19 @@ import arrowRight from '../assets/arrow--right.svg';
                 </div>
             </div>
             <div class="participants__col">
-                slider...
+                <div class="quote">
+                    <div class="quote__content">
+                        <img src={quotes.src} alt="Melnas pēdiņas" width="32px" height="32px">
+                        <p>Vestibulum hendrerit blandit auctor. Vivamus ex odio, lacinia non nulla id, placerat pharetra tortor.</p>
+                    </div>
+                    <div class="quote__person">
+                        <img src={profileImage.src} alt="Jānis Līgciemietis portrets" width="48px" height="48px">
+                        <div class="quote__info">
+                            <p class="quote__name">Jānis Līgciemietis</p>
+                            <p class="quote__work">Apeirons</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -42,6 +56,39 @@ import arrowRight from '../assets/arrow--right.svg';
                 top: 2px;
                 margin-left: 4px;
             }
+        }
+
+        @media (min-width: 1024px) {
+            &__content {
+                display: flex;
+                gap: 16px;
+            }
+
+            &__col {
+                flex: 1;
+            }
+        }
+    }
+
+    .quote {
+        padding: 24px;
+        max-width: 444px;
+        border: 1px solid var(--border-subtle-01-light);
+        background-color: var(--layer-01-light);
+
+        &__content {
+            display: flex;
+            gap: 24px;
+        }
+
+        &__person {
+            margin-top: 40px;
+            display: flex;
+            gap: 10px
+        }
+
+        &__name {
+            font-weight: bold;
         }
     }
 </style>

@@ -1,31 +1,52 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<!-- <meta name="generator" content={Astro.generator} /> -->
-		<title>Jaunā E‑veselības iedzīvotāju portāla prototips</title>
+--- 
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Button from '../components/Button.astro';
+import notfound from '../assets/404.svg';
+---
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Jaunā E‑veselības iedzīvotāju portāla prototips</title>
 
 		<!-- favicon -->
-		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-		<link rel="manifest" href="/favicon/site.webmanifest">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest">
 
 		<!-- fb meta -->
 		<meta property="og:url"                content="https://teste.lv" />
 		<meta property="og:type"               content="website" />
 		<meta property="og:title"              content="Jaunā E‑veselības iedzīvotāju portāla prototips" />
 		<meta property="og:description"        content="Projekts paredz jaunās paaudzes iedzīvotāju E-veselības portāla prototipa izveidi. Prototips – portāla vīzijas modelis." />
-		<meta property="og:image"              content="/fb-meta.png" />
-	</head>
-	<body>
-		<slot></slot>
-	</body>
+		<meta property="og:image"              content="fb-meta.png" />
+  </head>
+  <body>
+    <Header/>
+    <div class="not-found">
+        <div class="wrap">
+            <div class="not-found__content">
+                <img src={notfound.src} alt="2 plāksteri salikti krusteniski"/>
+                <h2>Lapa nav atrasta</h2>
+                <p>Lapa, kuru meklējat, neeksistē, vai notikusi kāda cita kļūda!</p>
+                <Button 
+                    label="Saite ved uz sākumlapu" 
+                    classList="button--purple" 
+                    title="Doties uz sākumlapu" 
+                    link="/"
+                    type="404"
+                />
+            </div>
+        </div>
+    </div>
+    <Footer/>
+  </body>
 </html>
 
-<style is:global>
+<style is:global lang="scss">
 	/* global styling */
 	:root {
 		--background-light: #F7F3F2;
@@ -204,4 +225,24 @@
 		font-size: 18px;
 		font-weight: 700;
 	}
+
+    .not-found {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__content {
+            padding: 100px 0;
+        }
+
+        h2 {
+            margin: 16px 0;
+            font-weight: 300;
+        }
+
+        p {
+            margin-bottom: 56px;
+        }
+    }
 </style>

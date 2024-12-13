@@ -2,20 +2,37 @@
 import Button from './Button.astro';
 ---
 
-<div class="hero">
+<div class="hero" itemscope itemtype="https://schema.org/CreativeWork">
     <div class="wrap">
         <div class="hero__content">
-            <h2 class="hero__title">Jaunā E‑veselības iedzīvotāju portāla <strong>prototips</strong></h2>
+            <!-- Title -->
+            <h2 class="hero__title" itemprop="name">Jaunā E‑veselības iedzīvotāju portāla <strong itemprop="additionalType">prototips</strong></h2>
+            
+            <!-- Button -->
             <div class="hero__button">
-                <Button label="Skatīt prototipu" classList="button--purple" title="Skatīt prototipu" link="#prototips"/>
+                <Button 
+                    label="Skatīt prototipu" 
+                    classList="button--purple" 
+                    title="Skatīt prototipu" 
+                    link="#prototips"
+                />
             </div>
-            <div class="hero__desc text">
+
+            <!-- Description Text -->
+            <div class="hero__desc text" itemprop="description">
                 <p>Projekts paredz jaunās paaudzes iedzīvotāju E-veselības portāla prototipa izveidi. Prototips – portāla vīzijas modelis.</p>
-                <p>Prototips tiks izmantots jauna <a href="http://www.eveseliba.gov.lv" title="Iet uz eveseliba.gov.lv portālu" target="_blank" rel="noopener noreferrer">www.eveseliba.gov.lv</a> portāla izveidē, lai tas būtu mūsdienīgs, ērts lietošanā, piedāvātu jaunus pakalpojumus un atbilstu iedzīvotāju vajadzībām.</p>
+                <p>Prototips tiks izmantots jauna <a 
+                    href="http://www.eveseliba.gov.lv" 
+                    title="Iet uz eveseliba.gov.lv portālu" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    itemprop="url"
+                >www.eveseliba.gov.lv</a> portāla izveidē, lai tas būtu mūsdienīgs, ērts lietošanā, piedāvātu jaunus pakalpojumus un atbilstu iedzīvotāju vajadzībām.</p>
             </div>
         </div>
     </div>
 </div>
+
 
 <style lang="scss">
     .hero {

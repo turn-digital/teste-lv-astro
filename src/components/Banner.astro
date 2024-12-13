@@ -1,5 +1,100 @@
 ---
+import logoFigma from '../assets/figma-logo.png';
+import btnApp from '../assets/button-appstore.svg';
+import btnPlay from '../assets/button-playstore.svg';
 ---
-<div class="banner">
-    banner stuff
+<div class="banner" itemscope itemtype="https://schema.org/CreativeWork">
+    <!-- Figma Logo -->
+    <div itemscope itemtype="https://schema.org/Organization" itemprop="creator">
+        <img 
+            src={logoFigma.src} 
+            alt="Figma logo" 
+            width="22px" 
+            height="32px" 
+            itemprop="logo" 
+        />
+    </div>
+
+    <!-- Banner Text -->
+    <h4 itemprop="description">
+        Lai prototipu būtu ērtāk lietot, lejupielādē Figma mobilo lietotni!
+    </h4>
+
+    <!-- User Reviews Section (Schema.org) -->
+    <div itemscope itemtype="https://schema.org/Review">
+        <meta itemprop="itemReviewed" content="Figma mobile app" />
+        
+        <div itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="worstRating" content="1" />
+            <meta itemprop="bestRating" content="5" />
+            <meta itemprop="ratingValue" content="5" />
+            <p itemprop="reviewBody">Šī ir lieliska lietotne, lai apskatītu un rediģētu prototipus! Ļoti ērta un viegli lietojama.</p>
+        </div>
+        
+        <p itemprop="author">Jānis Līgciemietis</p>
+        <meta itemprop="datePublished" content="2024-12-13" />
+    </div>
+
+    <!-- Buttons for App Stores -->
+    <div class="banner__buttons">
+        <!-- App Store Button -->
+        <a 
+            href="/" 
+            title="Iet uz App Store portālu" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Atvērt App Store portālu jaunā logā"
+            itemscope 
+            itemtype="https://schema.org/SoftwareApplication"
+            itemprop="offers"
+        >
+            <img 
+                src={btnApp.src} 
+                alt="App Store logo" 
+                itemprop="image"
+            />
+        </a>
+
+        <!-- Google Play Button -->
+        <a 
+            href="/" 
+            title="Iet uz Google Play Store portālu" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Atvērt Google Play Store portālu jaunā logā"
+            itemscope 
+            itemtype="https://schema.org/SoftwareApplication"
+            itemprop="offers"
+        >
+            <img 
+                src={btnPlay.src} 
+                alt="Google Play logo" 
+                itemprop="image"
+            />
+        </a>
+    </div>
 </div>
+
+<style lang="scss">
+    .banner {
+        margin: 24px 0;
+        padding: 24px;
+        border: 1px solid var(--border-subtle-01-light);
+        background-color: var(--layer-01-light);
+
+        h4 {
+            margin: 16px 0 24px;
+        }
+
+        &__buttons {
+            display: flex;
+            gap: 8px;
+
+            img {
+                display: inline-block;
+                width: 120px;
+                height: 40px;
+            }
+        }
+    }
+</style>

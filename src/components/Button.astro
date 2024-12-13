@@ -11,8 +11,8 @@ const { title, classList, type, link, label } = Astro.props;
 ---
 
 <a class={`button ${classList ? classList : ''}`}
-    target={link.startsWith('#') ? undefined : '_blank'}
-    rel={link.startsWith('#') ? undefined : 'noopener'}
+    target={link.startsWith('#') || type?.includes('404') ? undefined : '_blank'}
+    rel={link.startsWith('#') || type?.includes('404') ? undefined : 'noopener'}
     role="button"
     aria-label={label}
     href={link}>
@@ -27,7 +27,7 @@ const { title, classList, type, link, label } = Astro.props;
         justify-content: center;
         align-items: center;
         background-color: var(--background-dark);
-        color: var(--text-secondary);
+        color: var(--text-on-color);
         font-size: 16px;
         font-style: normal;
         font-weight: 400;

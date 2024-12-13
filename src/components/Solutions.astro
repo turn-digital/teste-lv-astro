@@ -3,35 +3,65 @@ import iconA11y from '../assets/icon-a11y.svg';
 import iconMobile from '../assets/icon-mobile.svg';
 import iconPerson from '../assets/icon-favorite.svg';
 ---
-<div class="solutions">
+<div class="solutions" itemscope itemtype="https://schema.org/CreativeWork">
     <div class="wrap">
         <div class="solutions__content">
-            <h3 class="solutions_title title">Tehniskie risinājumi, kas ņemti vērā</h3>
-            <div class="solutions__desc text">
+            <!-- Main Title -->
+            <h3 class="solutions_title title" itemprop="name">Tehniskie risinājumi, kas ņemti vērā</h3>
+
+            <!-- Description Text -->
+            <div class="solutions__desc text" itemprop="description">
                 <p>Izstrādājot prototipu, ņemti vērā vairāki mūsdienās būtiski tehniskie aspekti:</p>
             </div>
+
+            <!-- Solutions List -->
             <div class="solutions__list">
-                <div class="solutions__item">
-                    <img src={iconA11y.src} alt="Cilvēka simbols aplī" width="32" height="32">
+                
+                <!-- Accessibility Solution -->
+                <div class="solutions__item" itemscope itemtype="https://schema.org/Thing">
+                    <img 
+                        src={iconA11y.src} 
+                        alt="Cilvēka simbols aplī" 
+                        width="32" 
+                        height="32" 
+                        itemprop="image"
+                    >
                     <div class="solutions__item-content">
-                        <h4>Piekļūstamība</h4>
-                        <p>Ievēroti WCAG (Web Content Accessibility Guidelines) standarti, lai portāls būtu pieejams visiem.</p>
+                        <h4 itemprop="name">Piekļūstamība</h4>
+                        <p itemprop="description">Ievēroti WCAG (Web Content Accessibility Guidelines) standarti, lai portāls būtu pieejams visiem.</p>
                     </div>
                 </div>
-                <div class="solutions__item">
-                    <img src={iconMobile.src} alt="Mobīlais ekrāns ar ķeksīti" width="32" height="32">
+
+                <!-- Mobile-First Approach -->
+                <div class="solutions__item" itemscope itemtype="https://schema.org/Thing">
+                    <img 
+                        src={iconMobile.src} 
+                        alt="Mobīlais ekrāns ar ķeksīti" 
+                        width="32" 
+                        height="32" 
+                        itemprop="image"
+                    >
                     <div class="solutions__item-content">
-                        <h4>“Mobilie vispirms” pieeja</h4>
-                        <p>Dizains un funkcionalitāte ir optimizēti mobilajām ierīcēm, nodrošinot ērtu lietošanas pieredzi dažādos ekrānos.</p>
+                        <h4 itemprop="name">“Mobilie vispirms” pieeja</h4>
+                        <p itemprop="description">Dizains un funkcionalitāte ir optimizēti mobilajām ierīcēm, nodrošinot ērtu lietošanas pieredzi dažādos ekrānos.</p>
                     </div>
                 </div>
-                <div class="solutions__item">
-                    <img src={iconPerson.src} alt="Cilvēka simbols ar sirdi" width="32" height="32">
+
+                <!-- User-Centered Design -->
+                <div class="solutions__item" itemscope itemtype="https://schema.org/Thing">
+                    <img 
+                        src={iconPerson.src} 
+                        alt="Cilvēka simbols ar sirdi" 
+                        width="32" 
+                        height="32" 
+                        itemprop="image"
+                    >
                     <div class="solutions__item-content">
-                        <h4>Lietotājcentrēta pieeja</h4>
-                        <p>Fokuss uz lietotāju vajadzībām visā izstrādes procesā. Veiktas lietotāju intervijas, kartiņu šķirošana, navigācijas koka tests, prototipa testēšana u.c.</p>
+                        <h4 itemprop="name">Lietotājcentrēta pieeja</h4>
+                        <p itemprop="description">Fokuss uz lietotāju vajadzībām visā izstrādes procesā. Veiktas lietotāju intervijas, kartiņu šķirošana, navigācijas koka tests, prototipa testēšana u.c.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

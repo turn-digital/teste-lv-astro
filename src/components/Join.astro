@@ -4,32 +4,64 @@ import Button from "./Button.astro";
 import handImage from '../assets/hand.png';
 
 ---
-<div class="join" id="prototips">
+<div class="join" id="prototips" itemscope itemtype="https://schema.org/WebPage">
     <div class="wrap">
         <div class="join__content">
             <div class="join__col">
-                <h3 class="join__title title">Kā iesaistīties?</h3>
-                <div class="join__item">
-                    <h4 class="join__subtitle">Izpēti sadaļas un funkcijas!</h4>
-                    <p class="join__desc">Izvēlies vienu vai vairākus lietotāju profilus, pārlūko sadaļas, klikšķini uz funkcijām un pamēģini atrast konkrētu informāciju.</p>
+                <h3 class="join__title title" itemprop="name">Kā iesaistīties?</h3>
+                
+                <!-- FAQ Section -->
+                <div itemscope itemtype="https://schema.org/FAQPage">
+                    <div class="join__item" itemscope itemtype="https://schema.org/Question">
+                        <h4 class="join__subtitle" itemprop="name">Izpēti sadaļas un funkcijas!</h4>
+                        <div itemscope itemtype="https://schema.org/Answer">
+                            <p class="join__desc" itemprop="text">
+                                Izvēlies vienu vai vairākus lietotāju profilus, pārlūko sadaļas, klikšķini uz funkcijām un pamēģini atrast konkrētu informāciju.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="join__item" itemscope itemtype="https://schema.org/Question">
+                        <h4 class="join__subtitle" itemprop="name">Dalies ar savu viedokli!</h4>
+                        <div itemscope itemtype="https://schema.org/Answer">
+                            <p class="join__desc" itemprop="text">
+                                Uzraksti komentāru anketā zemāk, kas Tev šķita vērtīgs un ko varētu uzlabot.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="join__item">
-                    <h4 class="join__subtitle">Dalies ar savu viedokli!</h4>
-                    <p class="join__desc">Uzraksti komentāru anketā zemāk, kas Tev šķita vērtīgs un ko varētu uzlabot.</p>
-                </div>
-                <Banner/>
-                <Button label="Skatīt prototipu" title="Atvērt prototipu" classList="button--purple" link="#prototips" type="open"/>
+                
+                <!-- Banner and Button -->
+                <Banner />
+                <Button
+                    label="Skatīt prototipu"
+                    title="Atvērt prototipu"
+                    classList="button--purple"
+                    link="#prototips"
+                    type="open"
+                />
             </div>
             <div class="join__col">
-                <img src={handImage.src} alt="Roka, kas tur telfonu">
+                <img
+                    src={handImage.src}
+                    alt="Roka, kas tur telefonu ar piekļuvi jaunajam portālam"
+                    itemprop="image"
+                />
             </div>
         </div>
     </div>
+    
+    <!-- Comments Section -->
     <div class="wrap">
-        <div class="join__comment">
-            <h4>Sniedz savas atziņas</h4>
-            <p>Kad esi apskatījis prototipu, padalies - kas tev personīgi  likās vērtīgs jaunajā E‑veselības portālā un kas, tavuprāt, būtu uzlabojams!</p>
-            <Button label="Rakstīt komentāru" link="/FIXthisurl" title="Rakstīt komentāru"/>
+        <div class="join__comment" itemscope itemtype="https://schema.org/WebPageElement" itemprop="comment">
+            <h4 id="comment-title">Sniedz savas atziņas</h4>
+            <p id="comment-desc">
+                Kad esi apskatījis prototipu, padalies - kas tev personīgi likās vērtīgs jaunajā E‑veselības portālā un kas, tavuprāt, būtu uzlabojams!
+            </p>
+            <Button
+                label="Rakstīt komentāru"
+                link="/"
+                title="Rakstīt komentāru"
+            />
         </div>
     </div>
 </div>
@@ -46,6 +78,9 @@ import handImage from '../assets/hand.png';
         }
 
         &__col {
+            &:nth-of-type(1) {
+                padding-bottom: 104px;
+            }
             &:nth-of-type(2) {
                 display: flex;
                 justify-content: flex-end;
@@ -85,6 +120,10 @@ import handImage from '../assets/hand.png';
 
                 &:nth-of-type(2) {
                     margin-top: -122px;
+
+                    img {
+                        max-width: 460px;
+                    }
                 }
             }
         }

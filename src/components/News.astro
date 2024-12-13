@@ -1,11 +1,14 @@
 ---
 import mobileImage from '../assets/news-mobile.png';
 ---
-<div class="news">
+<div class="news" itemscope itemtype="https://schema.org/CreativeWork">
     <div class="wrap">
         <div class="news__content">
-            <h3 class="news_title title">Kas jauns paredzēts E‑veselības portālā?</h3>
-            <div class="news__desc text">
+            <!-- Title -->
+            <h3 class="news_title title" itemprop="headline">Kas jauns paredzēts E‑veselības portālā?</h3>
+            
+            <!-- Description Text -->
+            <div class="news__desc text" itemprop="description">
                 <p>E-veselībā tiek ieviesti aizvien jauni pakalpojumi. Šobrīd tajā pieejamas: e‑receptes, e‑darbnespējas lapas, e‑nosūtījumi, laboratorisko izmeklējumu un vizuālās diagnostikas izmeklējumu rezultāti un daudzi citi.</p>
                 <p>Jaunajā portālā būs pieejams arī Veselības plāns, kas līdzīgi kā kalendārs ietvers informāciju par visām konkrētā lietotāja aktualitātēm.</p>
                 <p>Tiks ieviests arī:</p>
@@ -17,8 +20,14 @@ import mobileImage from '../assets/news-mobile.png';
                 <p>Kā arī jaunais portāls būs ērti izmantojams viedierīcēs.</p>
             </div>
         </div>
+
+        <!-- Image with Alt text -->
         <div class="news__image">
-            <img src={mobileImage.src} alt="Mobīlais telefons ar ekrānšāviņu.">
+            <img 
+                src={mobileImage.src} 
+                alt="Mobīlais telefons ar ekrānšāviņu." 
+                itemprop="image"
+            />
         </div>
     </div>
 </div>
