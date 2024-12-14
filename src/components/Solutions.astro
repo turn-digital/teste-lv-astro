@@ -90,14 +90,20 @@ import iconPerson from '../assets/icon-favorite.svg';
             &__list {
                 padding-top: 24px;
                 display: flex;
-                gap: 16px;
+                gap: 32px;
             }
             &__item {
                 margin-top: 0;
+                flex-direction: column;
 
                 & + .solutions__item {
                     margin-top: 0;
                 }
+            }
+
+            &__item-content {
+                margin-top: 16px;
+                margin-left: 0;
             }
         }
     }

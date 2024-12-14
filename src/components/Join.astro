@@ -1,7 +1,7 @@
 ---
 import Banner from "./Banner.astro";
 import Button from "./Button.astro";
-import handImage from '../assets/hand.png';
+import handImage from '../assets/hand.webp';
 
 ---
 <div class="join" id="prototips" itemscope itemtype="https://schema.org/WebPage">
@@ -45,6 +45,8 @@ import handImage from '../assets/hand.png';
                     src={handImage.src}
                     alt="Roka, kas tur telefonu ar piekļuvi jaunajam portālam"
                     itemprop="image"
+                    width="460px"
+                    height="862px"
                 />
             </div>
         </div>
@@ -58,6 +60,7 @@ import handImage from '../assets/hand.png';
                 Kad esi apskatījis prototipu, padalies - kas tev personīgi likās vērtīgs jaunajā E‑veselības portālā un kas, tavuprāt, būtu uzlabojams!
             </p>
             <Button
+                 classList="button--dark"
                 label="Rakstīt komentāru"
                 link="/"
                 title="Rakstīt komentāru"
@@ -78,15 +81,14 @@ import handImage from '../assets/hand.png';
         }
 
         &__col {
-            &:nth-of-type(1) {
-                padding-bottom: 104px;
-            }
             &:nth-of-type(2) {
                 display: flex;
                 justify-content: flex-end;
 
                 img {
                     max-width: 320px;
+                    width: auto;
+                    height: auto;
                 }
             }
         }
@@ -117,6 +119,10 @@ import handImage from '../assets/hand.png';
 
             &__col {
                 flex: 1;
+
+                &:nth-of-type(1) {
+                    padding-bottom: 104px;
+                }
 
                 &:nth-of-type(2) {
                     margin-top: -122px;

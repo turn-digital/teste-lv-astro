@@ -1,5 +1,5 @@
 ---
-import mobileImage from '../assets/news-mobile.png';
+import mobileImage from '../assets/news-mobile.webp';
 ---
 <div class="news" itemscope itemtype="https://schema.org/CreativeWork">
     <div class="wrap">
@@ -27,6 +27,8 @@ import mobileImage from '../assets/news-mobile.png';
                 src={mobileImage.src} 
                 alt="Mobīlais telefons ar ekrānšāviņu." 
                 itemprop="image"
+                width="532px"
+                height="772px"
             />
         </div>
     </div>
@@ -46,6 +48,12 @@ import mobileImage from '../assets/news-mobile.png';
             margin-top: 40px;
             display: flex;
             justify-content: flex-end;
+
+            img {
+                max-width: 310px;
+                width: auto;
+                height: auto;
+            }
         }
 
         &__content {
@@ -65,13 +73,14 @@ import mobileImage from '../assets/news-mobile.png';
 
                 img {
                     width: 100%;
+                    max-width: inherit;
                 }
             }
         }
 
         @media (min-width: 1024px) {
             &__image {
-                width: 500px;
+                width: 532px;
             }
 		}
     }
