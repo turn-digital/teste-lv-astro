@@ -8,19 +8,19 @@ const { link } = Astro.props;
 ---
 <header class="header" itemscope itemtype="https://schema.org/WPHeader">
   <div class="wrap">
-      <nav class="header__nav" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main Navigation">
-          <!-- Logo Link -->
-          <a class="header__logo" href="/" itemscope itemtype="https://schema.org/Organization" itemprop="url" aria-label="Go to Home">
-              <img src={logo.src} width="29px" height="32px" alt="E-veselības logotips" itemprop="logo" />
-          </a>
-
-          <!-- Main Navigation Menu -->
-          <ul class="header__menu" role="navigation">
-              <li>
-                  <a class="link" href={link} itemprop="name" aria-label="View the prototype section">Skatīt prototipu</a>
-              </li>
-          </ul>
-      </nav>
+    <nav class="header__nav" itemscope itemtype="https://schema.org/SiteNavigationElement" aria-label="Main Navigation">
+      <!-- Logo Link -->
+      <a class="header__logo" href="/" itemscope itemtype="https://schema.org/Organization" itemprop="url" aria-label="Go to Home">
+        <img src={logo.src} width="29px" height="32px" alt="E-veselības logo" itemprop="logo" />
+      </a>
+    
+      <!-- Main Navigation Menu -->
+      <ul class="header__menu">
+        <li>
+          <a class="link" href={link} itemprop="name" aria-label="View the prototype section">Skatīt prototipu</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>
 
