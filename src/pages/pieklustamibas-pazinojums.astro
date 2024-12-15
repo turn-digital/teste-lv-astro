@@ -11,24 +11,39 @@ import { Markdown } from '@astropub/md'
         <div class="notification">
             <div class="wrap">
                 <div class="text">
-                    <Markdown of={`# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
-- item 1
-- item 2
-- item 2
-- - subitem 1
-    - subitem 2
-paragraph 1
-paragraph 2
-1. item 1
-2. item 2
-3. item 3
-4. item 4
-    1. subitem 1
-    2. subitem 2
-[Random link](https://www.teste.lv/pieklustamibas-pazinojums/#) going
+                    <Markdown of={`
+# Pieklūstamības paziņojums
+
+Mēs uzskatām, ka internets ir paredzēts visiem, un tiecamies nodrošināt piekļūstamību ikvienam mūsu tīmekļvietnes apmeklētājam. Mūsu mērķis ir atbilst Eiropas piekļūstamības standartam EN 301 549 v3.2.1 un Latvijas normatīvajos aktos noteiktajām prasībām, cik vien tas iespējams, ņemot vērā mūsu pašreizējos tehniskos un resursu ierobežojumus.
+
+
+## Tīmekļvietnes saturs un prototips
+teste.lv šobrīd piedāvā vienkāršu galveno lapu un saiti uz mūsu topošās e-veselības sistēmas prototipu, kas izstrādāts Figma platformā. Mēs esam īstenojuši vairākus piekļūstamības principus, piemēram: 
+- Pārbaudīta krāsu kontrasta atbilstība minimālajām prasībām  
+- Sakārtota virsrakstu hierarhija, lai atvieglotu satura uztveršanu
+
+Tomēr Figma platformas tehniskie ierobežojumi var radīt situācijas, kurās prototips nav pilnībā piekļūstams visiem lietotājiem, īpaši tiem, kas izmanto ekrāna lasītājus vai citas palīgtehnoloģijas. Šajā prototipa posmā daži elementi var nebūt pilnībā kontrolējami, taču mēs turpinām pilnveidot risinājumus un meklēt alternatīvas, lai uzlabotu piekļūstamību.
+
+
+## Nepiekļūstamās satura daļas
+- Dažas interaktīvās elementu funkcijas, kas atkarīgas no Figma tehniskajām iespējām  
+- Iespējamas nepilnības navigācijas un tastatūras kontroles jomā prototipā
+
+Mēs cenšamies nepārtraukti uzlabot piekļūstamību, lai nākotnē nodrošinātu labāku pieredzi visiem lietotājiem.
+
+
+## Saziņa un atsauksmes
+Ja pamanāt kādas problēmas vai nepilnības, kas nav minētas šajā paziņojumā, vai vēlaties saņemt konkrētu saturu citā formātā, lūdzu, sazinieties ar mums:
+
+E-pasts: info@testet.lv
+
+Jūsu atsauksmes mums ir vērtīgas, un mēs centīsimies atbildēt vai sniegt risinājumu 10 (desmit) darba dienu laikā.
+
+
+## Paziņojuma sagatavošana un pārskatīšana
+
+Šis piekļūstamības paziņojums pirmo reizi tika sagatavots 16.12.2024. Mēs plānojam regulāri to pārskatīt un atjaunināt, lai sekotu līdzi jaunākajām piekļūstamības prasībām un nodrošinātu iespējami iekļaujošu digitālo vidi.
+[Saite uz izvērtējumu](https://www.teste.lv/pieklustamibas-pazinojums/#) going
                         
                         `} />
                 </div>
@@ -42,4 +57,5 @@ paragraph 2
     .notification {
         padding: 80px 0;
     }
+
 </style>
