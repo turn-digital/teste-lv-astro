@@ -1,7 +1,7 @@
 ---
 import logoFigma from '../assets/figma-logo.png';
-import btnApp from '../assets/button-appstore.svg';
-import btnPlay from '../assets/button-playstore.svg';
+import AppStoreButton from './social-buttons/AppStore.astro';
+import PlayStoreButton from './social-buttons/PlayStore.astro';
 ---
 <div class="banner" itemscope itemtype="https://schema.org/CreativeWork">
     <!-- Figma Logo -->
@@ -36,45 +36,10 @@ import btnPlay from '../assets/button-playstore.svg';
     <!-- Buttons for App Stores -->
     <div class="banner__buttons">
         <!-- App Store Button -->
-        <a 
-            href="https://apps.apple.com/us/app/figma/id1152747299" 
-            title="Iet uz App Store portālu, lai lejupielādetu Figma lietotni" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="Atvērt App Store portālu jaunā logā"
-            itemscope 
-            itemtype="https://schema.org/SoftwareApplication"
-            itemprop="offers"
-        >
-            <img 
-                src={btnApp.src} 
-                alt="App Store logo" 
-                itemprop="image"
-                loading="lazy"
-                width="120px"
-                height="40px"
-            />
-        </a>
-
+        <AppStoreButton/>
+      
         <!-- Google Play Button -->
-        <a 
-            href="https://play.google.com/store/search?q=figma&c=apps" 
-            title="Iet uz Google Play Store portālu, lai lejupielādētu Figma lietotni" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="Atvērt Google Play Store portālu jaunā logā"
-            itemscope 
-            itemtype="https://schema.org/SoftwareApplication"
-            itemprop="offers"
-        >
-            <img 
-                src={btnPlay.src} 
-                alt="Google Play logo" 
-                itemprop="image"
-                width="132px"
-                height="40px"
-            />
-        </a>
+         <PlayStoreButton/>
     </div>
 </div>
 
