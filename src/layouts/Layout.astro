@@ -189,9 +189,8 @@
 			& + p {
 				margin-top: 24px;
 			}
-		}
-
-		li {
+			
+			li {
 			position: relative;
 			padding-left: 16px;
 
@@ -206,6 +205,45 @@
 				border-radius: 50%;
 				background-color: var(--text-primary);
 			}
+
+			&.sublist {
+				&::before {
+					display: none;
+				}
+			}
+		}
+
+		}
+
+		/* Main counter for the outer list */
+		ol {
+			counter-reset: item; /* Initialize the counter */
+		}
+
+		ol > li {
+			counter-increment: item; /* Increment the counter for each list item */
+			list-style-type: none; /* Remove default numbering */
+		}
+
+		ol > li::before {
+			content: counter(item) ". "; /* Display the outer counter */
+		}
+
+		/* Subcounter for nested ordered lists */
+		ol ol {
+			counter-reset: subitem; /* Initialize sub-counter for nested list */
+		}
+
+		ol ol > li {
+			counter-increment: subitem; /* Increment the subcounter */
+		}
+
+		ol ol > li::before {
+			content: counter(item) "." counter(subitem) ". "; /* Display sub-counter like 1.1, 1.2 */
+		}
+
+		ol, ul {
+			margin: 24px 0;
 		}
 
 		a {
