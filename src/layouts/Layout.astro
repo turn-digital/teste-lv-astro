@@ -1,10 +1,14 @@
+---
+const {title} = Astro.props
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name=description content="Projekts paredz jaunās paaudzes iedzīvotāju E-veselības portāla prototipa izveidi. Prototips – portāla vīzijas modelis."/>
-		<title>Jaunā E‑veselības iedzīvotāju portāla prototips</title>
+		<title>{title}</title>
 
 		<!-- favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
